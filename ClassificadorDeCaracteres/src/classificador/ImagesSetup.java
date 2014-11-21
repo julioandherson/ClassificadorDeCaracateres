@@ -89,8 +89,8 @@ public class ImagesSetup {
         String folderTestDigits = teste + "/digitos";
         String folderTestBoth = teste + "/digitos_letras";
         String nothingTest = teste + "/sem_caracteres";
+        buildTrainingSet(wekaAttributes, testingSet, folderTestDigits, DIGITOS);
         buildTrainingSet(wekaAttributes, testingSet, folderTestLetters, LETRAS);
-        buildTrainingSet(wekaAttributes, testingSet, folderTestDigits, LETRAS);
         buildTrainingSet(wekaAttributes, testingSet, folderTestBoth, DIGITOS_LETRAS);
         buildTrainingSet(wekaAttributes, testingSet, nothingTest, SEM_CARACTERES);
         eTest.evaluateModel(classificador, testingSet);
@@ -171,7 +171,7 @@ public class ImagesSetup {
 //    }
     
     
-          protected static double[] buildHistogram(File file) throws Exception {
+        protected static double[] buildHistogram(File file) throws Exception {
         BufferedImage image = ImageIO.read(file);
         
         int width = image.getWidth();
