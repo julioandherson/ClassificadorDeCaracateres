@@ -23,7 +23,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 public class ImagesSetup {
-
+	//true 0 imagens/treinamento imagens/teste
     private static final String DIGITOS = "digitos";
     private static final String LETRAS = "letras";
     private static final String DIGITOS_LETRAS = "digitos_letras";
