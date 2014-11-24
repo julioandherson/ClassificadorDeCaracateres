@@ -22,7 +22,7 @@ import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 
-public class ImagesSetup {
+public class ClassificadorDeCaracteres {
 	//-v randomsubspace imagens/treinamento imagens/teste
 	//"" randomsubspace imagens/treinamento imagens/teste
 
