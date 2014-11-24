@@ -23,7 +23,9 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 public class ImagesSetup {
-	//true 0 imagens/treinamento imagens/teste
+	//-v randomsubspace imagens/treinamento imagens/teste
+	//"" randomsubspace imagens/treinamento imagens/teste
+
     private static final String DIGITOS = "digitos";
     private static final String LETRAS = "letras";
     private static final String DIGITOS_LETRAS = "digitos_letras";
@@ -32,30 +34,22 @@ public class ImagesSetup {
     private static final int INDEX = 256;
 
     public static void main(String[] args) throws Exception {
-        boolean verbose = Boolean.parseBoolean(args[0]);
+        String verbose = args[0];
         String tecnica = args[1];
         String treinamento = args[2];
         String teste = args[3];
-        Classifier classificador;
+        Classifier classificador = null;
         
-        switch (Integer.parseInt(tecnica)) {
-		case 0:
+        if(tecnica.toLowerCase().equals("randomsubspace")){
 			classificador = new RandomSubSpace();
-			break;
-        case 1:
+        }else if(tecnica.toLowerCase().equals("part")){
 			classificador = new PART();
-			break;
-		case 2:
-			classificador = new ClassificationViaClustering();
-			break;
-		case 3:
-			classificador = new NNge();
-			break;
-		default:
-			classificador = new RandomSubSpace();
-			break;
-		}
-
+        }else if(tecnica.toLowerCase().equals("classificationviaclustering")){
+        	classificador = new ClassificationViaClustering();
+        }else if(tecnica.toLowerCase().equals("nnge")){
+        	classificador = new NNge();
+        }
+        
         FastVector wekaAttributes = new FastVector(CAPACITY);
         for (int i = 0; i < INDEX; i++) {
             Attribute attr = new Attribute("numeric" + i);
@@ -95,9 +89,11 @@ public class ImagesSetup {
         buildTrainingSet(wekaAttributes, testingSet, nothingTest, SEM_CARACTERES);
         eTest.evaluateModel(classificador, testingSet);
 
-        if(verbose) {
-            System.out.println(eTest.toSummaryString(true));
-            System.out.println(eTest.toClassDetailsString());
+        if(verbose.toLowerCase().equals("-v")) {
+            System.out.println(nothingTest);
+            System.out.println(folderTestLetters);
+            System.out.println(folderTestDigits);
+            System.out.println(folderTestBoth);
         }
         System.out.println("Precision: " + eTest.weightedPrecision());
         System.out.println("Recall: " + eTest.weightedRecall());
