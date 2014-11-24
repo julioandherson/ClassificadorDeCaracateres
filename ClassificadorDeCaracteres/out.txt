@@ -1,0 +1,47 @@
+letra_1.jpg: 
+letra_4.JPG: 
+letra_5.jpg: 
+letra_8.jpg: 
+letra_3.jpg: 
+letra_10.jpg: 
+caracteres49.jpg: 
+letra_6.jpg: 
+letra_7.jpg: 
+letra_2.jpg: 
+letra_9.jpg: 
+digitos_2.jpg: 
+6A23E.jpg: 
+digitos_10.jpg: 
+digitos_3.jpg: 
+digitos_7.jpg: 
+digitos_8.jpg: 
+digitos_5.jpg: 
+digitos_6.jpg: 
+digitos_4.jpg: 
+digitos_1.jpg: 
+digitos_9.jpg: 
+digitos_letra_2.jpg: 
+digitos_letra_7.jpg: 
+Caracteres-L10.jpg: 
+digitos_letra_9.jpg: 
+digitos_letra_8.JPG: 
+digitos_letra_5.jpg: 
+digitos_letra_10.jpg: 
+digitos_letra_3.jpg: 
+digitos_letra_4.jpg: 
+digitos_letra_6.jpg: 
+digitos_letra_1.jpg: 
+sem_10.jpg: 
+sem_7.jpg: 
+sem_2.jpg: 
+sem_6.jpg: 
+sem_1.jpg: 
+sem_5.jpg: 
+sem_4.jpg: 
+sem_3.jpg: 
+sem_8.jpg: 
+sem_9.jpg: 
+sem.jpg: 
+Precision: 0.28708791208791207
+Recall: 0.25
+F-Measure: 0.2623792270531401
